@@ -152,12 +152,10 @@ for k = 1:levels
     figure;
     imshow(mat2gray(FD{k}),[]);
     title(['Covariance Weighted Detail Level ',num2str(k)]);
-    imwrite(mat2gray(FD{k}), sprintf('cov-weight%d.png', k));
 end
 %% fused Base - by simple averaging
 FB = (BU + BO)/2;
 figure;imshow(FB);
-imwrite(FB,"Fused-Base.png")
 Recon = FB;
 
 for k = levels:-1:1
